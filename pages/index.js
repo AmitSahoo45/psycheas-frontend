@@ -56,7 +56,7 @@ export default function Home() {
           <div className="flex flex-col w-full sm:w-1/2 text-center sm:text-left">
             <h1 className="text-4xl text-green-200 mb-4">Psycheas</h1>
             <p className="whitespace-pre-line leading-7">
-              an enigma wrapped in a puzzle, shrouded in mystery, and steeped in intrigue. It's a tantalizing adventure that puts your wits to the test and transports you to a world of detectives and crime scenes. <br />
+              an enigma wrapped in a puzzle, shrouded in mystery, and steeped in intrigue. It&apos;s a tantalizing adventure that puts your wits to the test and transports you to a world of detectives and crime scenes. <br />
               But be carefull, there are clues mixed with dead ends.
               <br />
               Test your problem solving, creativity and time management skills now!

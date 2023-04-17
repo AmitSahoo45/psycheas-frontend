@@ -176,7 +176,7 @@ const Whodunit = () => {
                             ) : (
                                 <div className="flex items-center justify-between p-3 rounded-md border-2 my-2 bg-red-500">
                                     <div className="flex items-center space-x-2">
-                                        <p className="text-sm">Oops!! That'ś the wrong answer. {whodunit?.correct?.option} is the correct answer</p>
+                                        <p className="text-sm">Oops!! That&apos;s the wrong answer. {whodunit?.correct?.option} is the correct answer</p>
                                     </div>
                                 </div>
                             )}
