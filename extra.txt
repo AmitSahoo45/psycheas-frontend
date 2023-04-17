@@ -1,0 +1,48 @@
+<div
+                className="hover:cursor-pointer relative px-10 py-3 font-medium text-white transition duration-300 bg-green-400 rounded-md hover:bg-green-500 ease"
+                onClick={PlayNow}
+              >
+                <span className="absolute bottom-0 left-0 h-full -ml-2">
+                  <svg viewBox="0 0 487 487" className="w-auto h-full opacity-100 object-stretch" xmlns="http://www.w3.org/2000/svg"><path d="M0 .3c67 2.1 134.1 4.3 186.3 37 52.2 32.7 89.6 95.8 112.8 150.6 23.2 54.8 32.3 101.4 61.2 149.9 28.9 48.4 77.7 98.8 126.4 149.2H0V.3z" fill="#FFF" fillRule="nonzero" fillOpacity=".1"></path></svg>
+                </span>
+                <span className="absolute top-0 right-0 w-12 h-full -mr-3">
+                  <svg viewBox="0 0 487 487" className="object-cover w-full h-full" xmlns="http://www.w3.org/2000/svg"></svg>
+                </span>
+                <span className="relative">Play Now</span>
+              </div>
+
+                const router = useRouter()
+  const unsavedChanges = true
+  const warningText = 'You have unsaved changes - are you sure you wish to leave this page?'
+
+  const getData = async () => {
+    try {
+      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/storyline/whodunit/getall`)
+      console.log(data)
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
+
+  useEffect(() => {
+    const handleWindowClose = (e) => {
+      if (!unsavedChanges) return
+      e.preventDefault()
+      return (e.returnValue = warningText)
+    }
+
+    const handleBrowseAway = () => {
+      if (!unsavedChanges) return
+      if (window.confirm(warningText)) return
+      router.events.emit('routeChangeError')
+      throw 'routeChange aborted.'
+    }
+
+    window.addEventListener('beforeunload', handleWindowClose)
+    router.events.on('routeChangeStart', handleBrowseAway)
+    getData()
+    return () => {
+      window.removeEventListener('beforeunload', handleWindowClose)
+      router.events.off('routeChangeStart', handleBrowseAway)
+    }
+  }, [unsavedChanges])
