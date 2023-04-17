@@ -9,7 +9,7 @@ const AdminPanel = () => {
 
     const getUserData = async () => {
         try {
-            const { data: { attemptsByUser } } = await axios.get(`http://localhost:5000/storyline/solved/all`)
+            const { data: { attemptsByUser } } = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}/storyline/solved/all`)
             setUserData(attemptsByUser)
         } catch (error) {
             toast.error(error?.response?.data?.message)
