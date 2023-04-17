@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <section className="w-full">
-      <main className="flex min-h-screen items-center justify-between">
+      <main className="flex h-[80vh] items-center justify-between">
         <div className="flex w-full flex-col sm:flex-row pt-4 px-4">
           <div className="flex flex-col w-full sm:w-1/2">
             <div className="w-4/5 mx-auto">
