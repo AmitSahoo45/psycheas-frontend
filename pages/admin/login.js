@@ -55,13 +55,6 @@ const AdminLogin = () => {
                     >
                         Sign In
                     </button>
-                    <button
-                        className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                        type="button"
-                        onClick={() => router.push('/admin')}
-                    >
-                        Recruiter Login
-                    </button>
                 </div>
             </form>
         </div>
