@@ -59,7 +59,7 @@ export default function Home() {
               an enigma wrapped in a puzzle, shrouded in mystery, and steeped in intrigue. It&apos;s a tantalizing adventure that puts your wits to the test and transports you to a world of detectives and crime scenes. <br />
               But be carefull, there are clues mixed with dead ends.
               <br />
-              Test your problem solving, creativity and time management skills now!
+              Test your soft skills now!
             </p>
             <div className="flex flex-col mt-4">
               <button
