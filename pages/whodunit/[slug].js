@@ -61,6 +61,7 @@ const Whodunit = () => {
         if (solved != null)
             if (whodunit && Object.keys(solved).length > 0)
                 setCounter(300);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [whodunit]);
 
     useEffect(() => {
@@ -72,10 +73,12 @@ const Whodunit = () => {
         return () => {
             clearInterval(timer)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [counter]);
 
     useEffect(() => {
         setLoading(false)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [whodunit, solved])
 
     useEffect(() => {
@@ -84,6 +87,7 @@ const Whodunit = () => {
 
         if (localStorage.getItem(`${slug}`) != null)
             setCounter(localStorage.getItem(`${slug}`))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user])
 
     useEffect(() => {
@@ -92,7 +96,7 @@ const Whodunit = () => {
             e.preventDefault()
             return (e.returnValue = warningText)
         }
-        
+
         const handleBrowseAway = () => {
             if (!unsavedChanges) return
             if (window.confirm(warningText)) return
@@ -107,6 +111,7 @@ const Whodunit = () => {
             window.removeEventListener('beforeunload', handleWindowClose)
             router.events.off('routeChangeStart', handleBrowseAway)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [unsavedChanges])
 
     return (

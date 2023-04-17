@@ -17,7 +17,8 @@ export default function Home() {
   useEffect(() => {
     if (user.isPresent)
       dispatch(getPuzzle())
-  }, [user])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, dispatch])
 
   const PlayNow = async () => {
     if (!user.isPresent) {

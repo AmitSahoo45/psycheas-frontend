@@ -14,7 +14,7 @@ const Navbar = () => {
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("psycheas"));
         if (user) setUser(user)
-        console.log(user)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const LogOut = () => {
